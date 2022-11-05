@@ -6,9 +6,9 @@
       title="Parent Website"
       id="logo-link"
     >
-      <img src="./icons/IconLogo.png" alt="logo" id="logo" class="logo" />
+      <img src="../icons/IconLogo.png" alt="logo" id="logo" class="logo" />
     </a>
-    <a id="github-link">This project on Github!</a>
+    <a href="https://github.com/RobinBachus/CSharper" id="github-link">This project on Github!</a>
   </div>
 </template>
 
