@@ -1,8 +1,9 @@
 {
   "name": "csharper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite",
+    "dotnet": "dotnet ./server/bin/Release/net6.0/CServer.dll",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
