@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import SideBar from "./components/SideBar.vue";
-import TopBar from "./components/TopBar.vue";
+import SideBar from "./components/UI/SideBar.vue";
+import TopBar from "./components/UI/TopBar.vue";
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import TopBar from "./components/TopBar.vue";
   <div class="sidebar">
     <SideBar></SideBar>
   </div>
-  <main class="main-content">
+  <main>
     <RouterView />
   </main>
 </template>
@@ -37,10 +37,10 @@ import TopBar from "./components/TopBar.vue";
     grid-area: topBar;
   }
 
-  .main-content {
+  main {
     grid-area: main;
-    padding: 2rem;
-    padding-right: 15vw;
+    display: flex;
+    align-items: stretch;
   }
 }
 </style>

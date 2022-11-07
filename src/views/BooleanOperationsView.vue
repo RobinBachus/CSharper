@@ -2,10 +2,11 @@
   <div class="main-container">
     <h1>Plans:</h1>
     <ul>
-      <li>Basic calculus ([+], [-], [*], [/])</li>
-      <li>Math.Pow, Math.sqrt</li>
-      <li>Divisibility checker</li>
-      <li>Return a given length of pi</li>
+      <li>Option for string or number (string only [==] and [!=])</li>
+      <li>
+        Check if expression is true ([&lt;], [>], [==], [&lt;=], [>=], [!=])
+      </li>
+      <li>Not flag [!] to reverse output</li>
     </ul>
   </div>
 </template>

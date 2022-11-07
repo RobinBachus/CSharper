@@ -10,24 +10,24 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/calculator",
-      name: "calculator",
-      component: () => import("../views/CalculatorView.vue"),
+      path: "/calculations",
+      name: "calculations",
+      component: () => import("../views/CalculationsView.vue"),
     },
     {
       path: "/boolean-operations",
       name: "boolean-operations",
-      component: () => import("../views/BooleanOperations.vue"),
+      component: () => import("../views/BooleanOperationsView.vue"),
     },
     {
       path: "/random-generator",
       name: "random-generator",
-      component: () => import("../views/RandomGenerator.vue"),
+      component: () => import("../views/RandomGeneratorView.vue"),
     },
     {
       path: "/converter",
       name: "converter",
-      component: () => import("../views/Converter.vue"),
+      component: () => import("../views/ConverterView.vue"),
     },
   ],
 });
