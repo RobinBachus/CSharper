@@ -8,12 +8,12 @@ This is a website to practice c#, html, css and javascript. It should include mo
 
 ### Home
 
-- about
+- [x] about
 
 ### Calculator
 
-- [ ] Basic calculus ([+], [-], [*], [/])
-- [ ] Math.Pow, Math.sqrt
+- [x] Basic calculus ([+], [-], [*], [/])
+- [x] Math.Pow, Math.sqrt
 - [ ] Divisibility checker
 - [ ] Return a given length of pi
 
