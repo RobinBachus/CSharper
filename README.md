@@ -12,6 +12,7 @@ To install this project get the source code from Github and run:
 PS CSharper> npm install
 ```
 
+I tried remove any unnecessary dependencies so this should be fairly small.  
 To install the server component use:
 
 ```powershell
@@ -42,8 +43,9 @@ PS CSharper> npm run dotnet
 
 - [x] Basic calculus ([+], [-], [*], [/])
 - [x] Math.Pow, Math.sqrt
-- [ ] Divisibility checker
+- [x] Divisibility checker
 - [ ] Return a given length of pi
+- [ ] Check if a number is prime
 
 ### Boolean operations
 

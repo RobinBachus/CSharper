@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Plans from "../components/Calculations/PlanList.vue";
-import Calculator from "../components/Calculations/CalculatorComponent.vue";
+import Calculator from "../components/Calculations/CalculatorTab.vue";
 </script>
 
 <template>

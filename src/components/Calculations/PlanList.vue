@@ -6,6 +6,7 @@
       <li>Math.Pow, Math.sqrt</li>
       <li>Divisibility checker</li>
       <li>Return a given length of pi</li>
+      <li>Check if a number is prime</li>
     </ul>
   </div>
 </template>
