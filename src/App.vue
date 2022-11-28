@@ -11,9 +11,9 @@ import TopBar from "./components/UI/TopBar.vue";
   <div class="sidebar">
     <SideBar></SideBar>
   </div>
-  <main>
+  <div class="content">
     <RouterView />
-  </main>
+  </div>
 </template>
 
 <style scoped>
@@ -37,7 +37,7 @@ import TopBar from "./components/UI/TopBar.vue";
     grid-area: topBar;
   }
 
-  main {
+  .content {
     grid-area: main;
     display: flex;
     align-items: stretch;
