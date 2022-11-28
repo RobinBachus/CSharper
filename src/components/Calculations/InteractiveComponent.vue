@@ -7,10 +7,12 @@
       <form @submit.prevent="getResult()">
         <h2>Give in your expression</h2>
         <!-- Not using number inputs because they allow the 'e' which my server does not support  -->
+        <!-- This might be updated later because the server does apparently allow 'E' -->
         <input
           id="numberField1"
           v-model="numberField1"
-          type="number"
+          type="text"
+          pattern="[-+]?[\d]+[,]?[\d]*"
           maxlength="20"
         />
         <select id="operator" v-model="operator">
@@ -26,7 +28,8 @@
         <input
           id="numberField2"
           v-model="numberField2"
-          type="number"
+          type="text"
+          pattern="[-+]?[\d]+[,]?[\d]*"
           maxlength="20"
         />
         <button id="submit">=</button>
@@ -35,10 +38,6 @@
         <input id="result" v-model="result" disabled />
         <p></p>
       </form>
-    </div>
-    <hr />
-    <div id="info-container">
-      <h2>Info</h2>
     </div>
   </main>
 </template>
@@ -114,7 +113,7 @@ export default {
 </script>
 
 <style scoped>
-input[type="number"],
+input[type="text"],
 select,
 #submit,
 #result {
@@ -123,7 +122,7 @@ select,
   color: hsla(160, 100%, 37%, 1);
 }
 
-input[type="number"] {
+input[type="text"] {
   border-color: rgb(0, 119, 80);
 }
 

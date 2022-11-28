@@ -1,13 +1,16 @@
 <template>
-  <div class="tab">
-    <h1>Plans:</h1>
-    <ul>
-      <li>Basic calculus ([+], [-], [*], [/])</li>
-      <li>Math.Pow, Math.sqrt</li>
-      <li>Divisibility checker</li>
-      <li>Return a given length of pi</li>
-      <li>Check if a number is prime</li>
-    </ul>
+  <h2>Plans:</h2>
+  <div id="checklist">
+    <p class="checkbox done">V</p>
+    <p class="label">Basic calculus ([+], [-], [*], [/])</p>
+    <p class="checkbox done">V</p>
+    <p class="label">Math.Pow, Math.sqrt</p>
+    <p class="checkbox done">V</p>
+    <p class="label">Divisibility checker</p>
+    <p class="checkbox done">V</p>
+    <p class="label">Return a given length of pi</p>
+    <p class="checkbox todo">X</p>
+    <p class="label">Check if a number is prime</p>
   </div>
 </template>
 
@@ -18,3 +21,34 @@ export default defineComponent({
   name: "PlanList",
 });
 </script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+#checklist {
+  display: grid;
+  grid-template-columns: fit-content(2rem) auto;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #333;
+  color: hsla(160, 100%, 37%, 1);
+  width: 1.6em;
+  border: 1.5px inset hsla(160, 100%, 37%, 1);
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+  font-size: smaller;
+}
+
+.todo {
+  color: red;
+}
+
+p {
+  padding: 0;
+}
+</style>
