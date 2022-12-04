@@ -2,9 +2,9 @@
   <h1>Info</h1>
   <h2>About</h2>
   <p>
-    This component can do simple math and a few other things. <br />
-    Just plug your parameters into the top 2 input fields and <br />
-    select an operation by switching the middle dropdown menu.
+    This component can do simple math and a few other things. Just plug your
+    parameters into the top 2 input fields and select an operation by switching
+    the middle dropdown menu.
   </p>
   <h2>What can it do?</h2>
   <ul>
@@ -20,13 +20,16 @@
     </li>
     <li>
       The [%] or remainder operator returns the result of "<code>
-        <a href="#numberField1">[A]</a>-(<a href="#numberField1">[A]</a>/<a
-          href="#numberField2"
+        <a href="#numberField1">[A]</a>-((<span class="constant">int</span>)(<a
+          href="#numberField1"
+          >[A]</a
+        >/<a href="#numberField2">[B]</a>))*<a href="#numberField2"
           >[B]</a
-        >)*<a href="#numberField2">[B]</a> </code
+        > </code
       >"
       <br />
       This is most often used in code to test divisibility using "<code
+        lang="ts"
         ><a href="#numberField1">[A]</a>%<a href="#numberField2">[B]</a>==<span
           class="constant"
           >0</span
@@ -35,9 +38,13 @@
     </li>
     <li>
       The [π] operator will return pi to <a href="#numberField1">[A]</a> decimal
-      places<sup
-        ><a href="javascript:void(0)" @click="flash('#footnote-1')">1</a></sup
-      >
+      places
+      <sup>
+        <a href="javascript:void(0)" @click="flash('#footnote-1')">1</a>
+      </sup>
+      <br />
+      The number of decimal places has been capped at 28 due to the limitations
+      of rounding Decimals in c#
     </li>
   </ul>
   <h2>footnotes</h2>
@@ -57,7 +64,6 @@ export default defineComponent({
         setTimeout(() => {
           element.style.outline = "2px solid transparent";
         }, 1000);
-        
       }
     },
   },
@@ -70,7 +76,7 @@ h2 {
 }
 
 code {
-  color: #3f9af5;
+  color: #4bb9fd;
   background-color: black;
 }
 

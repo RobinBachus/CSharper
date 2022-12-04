@@ -1,7 +1,7 @@
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/calculations">Calculations</RouterLink>
+    <RouterLink to="/calculations">Calculator</RouterLink>
     <RouterLink to="/boolean-operations"> Boolean operations</RouterLink>
     <RouterLink to="/random-generator"> Random generator</RouterLink>
     <RouterLink to="/converter"> Converter </RouterLink>

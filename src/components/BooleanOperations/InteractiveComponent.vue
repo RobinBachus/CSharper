@@ -2,7 +2,7 @@
 
 <template>
   <main>
-    <h1>Calculator</h1>
+    <h1>Boolean operations</h1>
     <div class="form-container">
       <form @submit.prevent="getResult()">
         <h2>Give in your expression</h2>
@@ -12,19 +12,13 @@
           id="numberField1"
           v-model="numberField1"
           type="text"
-          pattern="[-+]?[\d]+[,]?[\d]*"
           maxlength="20"
+          :invalid="field1Invalid"
         />
         <select id="operator" v-model="operator">
-          <option>+</option>
-          <option>-</option>
-          <option>*</option>
-          <option>/</option>
-          <option>^</option>
-          <option>√</option>
-          <option>%</option>
-          <option>π</option>
-          <option class="prime">P</option>
+          <option>==</option>
+          <option>></option>
+          <option>&lt;</option>
         </select>
         <input
           id="numberField2"
@@ -53,7 +47,9 @@ export default {
     return {
       numberField1: "",
       numberField2: "",
-      operator: "+",
+      field1Invalid: false,
+      field2Invalid: false,
+      operator: "==",
       result: "",
     };
   },
@@ -61,61 +57,24 @@ export default {
     async getResult() {
       this.result = "";
       let parameter2: string = this.numberField2;
-      if (
-        (this.numberField1 === "" || this.numberField2 === "") &&
-        this.operator !== "√" &&
-        this.operator !== "π"
-      ) {
-        this.result = "A field is still empty!";
-        return false;
-      }
-      else if (
-        this.operator === "/" &&
-        (this.numberField2 === "0" || this.numberField2 === "-0")
-      ) {
-        this.result = "Can't divide by 0!";
-        return false;
-      }
- else if (this.operator === "π") {
-        if ((this.numberField1 as unknown as number) > 28) {
-          this.result = "Max digits is 28";
-          return false;
-        }
-      }
-
-      if (this.operator === "√" || this.operator === "π") {
-        if ((this.numberField1 as unknown as number) < 0) {
-          this.result = "Only positive numbers!";
-          return false;
-        }
-        parameter2 = "0";
-      }
-
       const data: RequestData = {
-        Module: Modules.Calculations,
+        Module: Modules.BooleanOperations,
         Parameters: [this.numberField1, parameter2, this.operator],
       };
-      const response = await makePOSTRequest(data);
+      let response = await makePOSTRequest(data);
       this.result = await response.text();
     },
   },
   watch: {
-    operator: function () {
-      if (this.operator === "√" || this.operator === "π") {
-        this.numberField2 = "";
-        document
-          .getElementById("numberField2")
-          ?.setAttribute("disabled", "disable");
-      }
- else {
-        document.getElementById("numberField2")?.removeAttribute("disabled");
-      }
-    },
-    result: function () {
-      if (this.result.length > 21) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        document.getElementById("result")!.style.width =
-          this.result.length + "ch";
+    // A function that checks
+    operator: function () {},
+    numberField1: function () {
+      if (isNaN(parseFloat(this.numberField1))) {
+        this.field1Invalid = true;
+        console.log("invalid");
+      } else {
+        this.field1Invalid = false;
+        console.log("valid");
       }
     },
   },
@@ -159,11 +118,9 @@ input:invalid {
   background-color: rgb(33, 33, 33);
   border-color: #333;
 }
-</style>
 
-<style>
-.prime {
-  font-family: "Segoe UI";
-  font-weight: bold;
+@font-face {
+  font-family: CascadiaMono;
+  src: url(../../assets/fonts/CascadiaMono.woff2);
 }
 </style>

@@ -6,7 +6,7 @@ module.exports = {
   extends: [
     "plugin:vue/vue3-essential",
     "eslint:recommended",
-    "@vue/eslint-config-typescript",
+    "@vue/eslint-config-typescript/recommended",
     "@vue/eslint-config-prettier",
   ],
   parserOptions: {
@@ -19,5 +19,8 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "no-console": "off",
+    "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
+    indent: ["error", 2],
   },
 };

@@ -47,6 +47,7 @@ export default {
     padding-left: 5rem;
     grid-column: 2;
     grid-row: 1 / 3;
+    max-width: 43rem;
   }
 }
 </style>

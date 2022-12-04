@@ -6,21 +6,20 @@ export enum Modules {
   Converter,
 }
 
+/**
+ * The object type used by the {@link makePOSTRequest()} function to format POST requests
+ */
 export type RequestData = {
   Module: Modules;
-  SubModule: number;
   Parameters: string[];
 };
 
 /**
  * Makes a POST HTTP request to the webserver (localhost:8000)
  *
- * @param data The body of the POST request which must include
- * the module (view), submodule (component) and the request parameters
+ * @param data The body of the POST request which must include the module (view) and the request parameters
  *
- * @remarks The submodule uses an number to represent itself
- *
- * @returns The servers response to the request
+ * @returns The response from the server
  */
 export async function makePOSTRequest(data: RequestData) {
   const options = {
@@ -30,6 +29,6 @@ export async function makePOSTRequest(data: RequestData) {
     },
     body: JSON.stringify(data),
   };
-  console.log(data.SubModule + " request sent, awaiting response...");
+  console.log(data.Module + " request sent, awaiting response...");
   return await fetch("http://localhost:8000", options);
 }

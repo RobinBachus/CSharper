@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: "/calculations",
       name: "calculations",
-      component: () => import("../views/CalculationsView.vue"),
+      component: () => import("../views/CalculatorView.vue"),
     },
     {
       path: "/boolean-operations",
