@@ -32,7 +32,7 @@ export default {
 @media (min-width: 1024px) {
   .main-container {
     display: grid;
-    grid-template-columns: fit-content(30rem) fit-content(100%);
+    grid-template-columns: fit-content(50vw) fit-content(100%);
     grid-template-rows: fit-content(12rem) 1fr;
     grid-gap: 2rem;
     padding-left: 4rem;

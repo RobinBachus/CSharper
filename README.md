@@ -9,7 +9,7 @@ This is a website to practice c#, html, css and javascript. It should include mo
 To install this project get the source code from Github and run:
 
 ```powershell
-PS CSharper> npm install
+PS CSharper> npm install --omit=dev
 ```
 
 I tried remove any unnecessary dependencies so this should be fairly small.  
@@ -44,18 +44,21 @@ PS CSharper> npm run dotnet
 - [x] Basic calculus ([+], [-], [*], [/])
 - [x] Math.Pow, Math.sqrt
 - [x] Divisibility checker
-- [ ] Return a given length of pi
-- [ ] Check if a number is prime
+- [x] Return a given length of pi
 
 ### Boolean operations
 
 - [ ] Option for string or number (string only [==] and [!=])
 - [ ] Check if expression is true ([<], [>], [==], [<=], [>=], [!=])
 - [ ] Not flag [!] to reverse output
+- [ ] Check if a number is prime
 
 ### Random generator
 
 - [ ] Get a given amount of random numbers between two values
+- [ ] Get a given amount of random characters
+- [ ] Randomly rearrange a sentence
+- [ ] Get a random color
 
 ### Converter
 

@@ -1,19 +1,43 @@
+<script setup lang="ts">
+import Plans from "../components/Converter/PlanList.vue";
+</script>
+
 <template>
   <div class="main-container">
-    <h1>Plans:</h1>
-    <ul>
-      <li>Convert euros to dollars and reverse</li>
-      <li>Covert chars to Unicode and reverse</li>
-    </ul>
+    <div id="plans">
+      <Plans></Plans>
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+export default {
+  components: {
+    Plans,
+  },
+};
+</script>
 
 <style scoped>
 @media (min-width: 1024px) {
   .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: fit-content(50vw) 50vw;
+    grid-template-rows: fit-content(12rem) 1fr;
+    grid-gap: 2rem;
+    padding-left: 4rem;
+    padding-top: 2rem;
+  }
+
+  #interactive {
+    border-bottom: 2px dashed #1d4975;
+  }
+
+  #info {
+    padding-left: 5rem;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    max-width: 43rem;
   }
 }
 </style>

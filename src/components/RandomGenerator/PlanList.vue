@@ -1,14 +1,8 @@
 <template>
   <h2>Plans:</h2>
   <div id="checklist">
-    <p class="checkbox"></p>
-    <p class="label">Option for string or number (string only [==])</p>
-    <p class="checkbox"></p>
-    <p class="label">
-      Check if expression is true ([&lt;], [>], [==], [&lt;=], [>=])
-    </p>
-    <p class="checkbox"></p>
-    <p class="label">Not flag [!] to reverse output</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a given amount of random numbers between two values</p>
   </div>
 </template>
 

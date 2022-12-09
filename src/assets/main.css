@@ -14,16 +14,6 @@ a,
   transition: 0.4s;
 }
 
-@font-face {
-  font-family: CascadiaMono;
-  src: url(../../assets/fonts/CascadiaMono.woff2);
-}
-
-@font-face {
-  font-family: ArialMonoBold;
-  src: url(../../assets/fonts/ArialMonoMTProBold.TTF);
-}
-
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

@@ -13,8 +13,7 @@
           v-model="numberField1"
           type="text"
           pattern="[-+]?[\d]+[,]?[\d]*"
-          maxlength="20"
-        />
+          maxlength="20" />
         <select id="operator" v-model="operator">
           <option>+</option>
           <option>-</option>
@@ -24,15 +23,13 @@
           <option>√</option>
           <option>%</option>
           <option>π</option>
-          <option class="prime">P</option>
         </select>
         <input
           id="numberField2"
           v-model="numberField2"
           type="text"
           pattern="[-+]?[\d]+[,]?[\d]*"
-          maxlength="20"
-        />
+          maxlength="20" />
         <button id="submit">=</button>
         <br />
         <p>Result:</p>
@@ -68,15 +65,13 @@ export default {
       ) {
         this.result = "A field is still empty!";
         return false;
-      }
-      else if (
+      } else if (
         this.operator === "/" &&
         (this.numberField2 === "0" || this.numberField2 === "-0")
       ) {
         this.result = "Can't divide by 0!";
         return false;
-      }
- else if (this.operator === "π") {
+      } else if (this.operator === "π") {
         if ((this.numberField1 as unknown as number) > 28) {
           this.result = "Max digits is 28";
           return false;
@@ -106,8 +101,7 @@ export default {
         document
           .getElementById("numberField2")
           ?.setAttribute("disabled", "disable");
-      }
- else {
+      } else {
         document.getElementById("numberField2")?.removeAttribute("disabled");
       }
     },
@@ -132,14 +126,11 @@ select,
   color: hsla(160, 100%, 37%, 1);
 }
 
-input[type="text"]:not(#result) {
-  border-color: rgb(0, 119, 80);
-}
-
 input[type="text"] {
   font-family: CascadiaMono, sans-serif;
   width: 23ch;
   height: 21px;
+  border-color: rgb(0, 119, 80);
 }
 
 #submit {
@@ -159,11 +150,9 @@ input:invalid {
   background-color: rgb(33, 33, 33);
   border-color: #333;
 }
-</style>
 
-<style>
-.prime {
-  font-family: "Segoe UI";
-  font-weight: bold;
+@font-face {
+  font-family: CascadiaMono;
+  src: url(../../assets/fonts/CascadiaMono.woff2);
 }
 </style>

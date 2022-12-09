@@ -1,16 +1,14 @@
 <template>
   <h2>Plans:</h2>
   <div id="checklist">
-    <p class="checkbox done">V</p>
+    <p class="checkbox done"></p>
     <p class="label">Basic calculus ([+], [-], [*], [/])</p>
-    <p class="checkbox done">V</p>
+    <p class="checkbox done"></p>
     <p class="label">Math.Pow, Math.sqrt</p>
-    <p class="checkbox done">V</p>
+    <p class="checkbox done"></p>
     <p class="label">Divisibility checker</p>
-    <p class="checkbox done">V</p>
+    <p class="checkbox done"></p>
     <p class="label">Return a given length of pi</p>
-    <p class="checkbox todo">X</p>
-    <p class="label">Check if a number is prime</p>
   </div>
 </template>
 
@@ -44,8 +42,15 @@ export default defineComponent({
   font-size: smaller;
 }
 
+.checkbox:not(.todo)::after {
+  content: "V";
+}
+
 .todo {
   color: red;
+}
+.todo::after {
+  content: "X";
 }
 
 p {

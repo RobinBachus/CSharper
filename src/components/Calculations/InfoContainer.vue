@@ -14,8 +14,11 @@
       power of <a href="#numberField2">[B]</a>
     </li>
     <li>
-      You can use [√] to get the square root of a number<sup
-        ><a href="javascript:void(0)" @click="flash('#footnote-1')">1</a></sup
+      You can use [√] to get the square root of a number<a
+        href="javascript:void(0)"
+        @click="flash('#footnote-1')"
+        class="footnote-1-ref"
+        >1</a
       >
     </li>
     <li>
@@ -38,17 +41,22 @@
     </li>
     <li>
       The [π] operator will return pi to <a href="#numberField1">[A]</a> decimal
-      places
-      <sup>
-        <a href="javascript:void(0)" @click="flash('#footnote-1')">1</a>
-      </sup>
+      places<a
+        href="javascript:void(0)"
+        @click="flash('#footnote-1')"
+        class="footnote-1-ref"
+        >1</a
+      >
       <br />
       The number of decimal places has been capped at 28 due to the limitations
       of rounding Decimals in c#
     </li>
   </ul>
   <h2>footnotes</h2>
-  <p id="footnote-1" class="footnote">[1] These operators only have 1 input</p>
+  <p id="footnote-1" class="footnote">
+    <a href="javascript:void(0)" @click="flashFootnoteRefs(1)">[1]</a> These
+    operators only have 1 input
+  </p>
 </template>
 
 <script lang="ts">
@@ -57,8 +65,22 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "InfoContainer",
   methods: {
-    flash(target: string) {
-      const element = document.querySelector(target) as HTMLElement;
+    flashFootnoteRefs(footnote: number) {
+      const refName = "footnote-" + footnote + "-ref";
+      const footnotes = document.getElementsByClassName(refName);
+      for (const element of footnotes) {
+        const parent = element.parentElement as HTMLElement;
+        console.log(parent.nodeType);
+        this.flash(parent);
+      }
+    },
+    flash(target: string | HTMLElement) {
+      let element: HTMLElement;
+      if (typeof target == "string") {
+        element = document.querySelector(target) as HTMLElement;
+      } else {
+        element = target;
+      }
       if (element !== null) {
         element.style.outline = "2px solid yellow";
         setTimeout(() => {
@@ -75,6 +97,10 @@ h2 {
   color: hsla(160, 100%, 37%, 1);
 }
 
+li {
+  transition: outline 0.5s;
+}
+
 code {
   color: #4bb9fd;
   background-color: black;
@@ -82,6 +108,11 @@ code {
 
 .constant {
   color: rgb(250, 187, 14);
+}
+
+.footnote-1-ref {
+  vertical-align: super;
+  font-size: smaller;
 }
 
 .footnote {

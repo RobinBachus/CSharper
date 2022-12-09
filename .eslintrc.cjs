@@ -17,10 +17,16 @@ module.exports = {
       "error",
       {
         endOfLine: "auto",
+        bracketSameLine: true,
       },
     ],
-    "no-console": "off",
-    "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
-    indent: ["error", 2],
+
+    "vue/html-closing-bracket-newline": [
+      "off",
+      {
+        singleline: "never",
+        multiline: "never",
+      },
+    ],
   },
 };
