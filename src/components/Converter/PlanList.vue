@@ -5,6 +5,8 @@
     <p class="label">Convert euros to dollars and reverse</p>
     <p class="checkbox todo"></p>
     <p class="label">Covert chars to Unicode and reverse</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Add information about the operators</p>
   </div>
 </template>
 

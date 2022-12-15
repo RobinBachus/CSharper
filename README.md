@@ -45,13 +45,15 @@ PS CSharper> npm run dotnet
 - [x] Math.Pow, Math.sqrt
 - [x] Divisibility checker
 - [x] Return a given length of pi
+- [x] Add information about the operators
 
 ### Boolean operations
 
-- [ ] Option for string or number (string only [==] and [!=])
-- [ ] Check if expression is true ([<], [>], [==], [<=], [>=], [!=])
-- [ ] Not flag [!] to reverse output
-- [ ] Check if a number is prime
+- [x] Option for string or number (string only [==])
+- [x] Check if expression is true ([<], [>], [==], [<=], [>=])
+- [x] Not flag [!] to reverse output
+- [x] Check if a number is prime
+- [ ] Add information about the operators
 
 ### Random generator
 
@@ -59,8 +61,10 @@ PS CSharper> npm run dotnet
 - [ ] Get a given amount of random characters
 - [ ] Randomly rearrange a sentence
 - [ ] Get a random color
+- [ ] Add information about the operators
 
 ### Converter
 
 - [ ] Convert euros to dollars and reverse
 - [ ] Covert chars to Unicode and reverse
+- [ ] Add information about the operators

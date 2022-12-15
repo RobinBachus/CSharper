@@ -12,8 +12,9 @@
           id="numberField1"
           v-model="numberField1"
           type="text"
-          pattern="[-+]?[\d]+[,]?[\d]*"
-          maxlength="20" />
+          pattern="[-+]?[\d]*[,.]?[\d]+"
+          maxlength="20"
+        />
         <select id="operator" v-model="operator">
           <option>+</option>
           <option>-</option>
@@ -28,8 +29,9 @@
           id="numberField2"
           v-model="numberField2"
           type="text"
-          pattern="[-+]?[\d]+[,]?[\d]*"
-          maxlength="20" />
+          pattern="[-+]?[\d]*[,.]?[\d]+"
+          maxlength="20"
+        />
         <button id="submit">=</button>
         <br />
         <p>Result:</p>
@@ -107,9 +109,9 @@ export default {
     },
     result: function () {
       if (this.result.length > 21) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        document.getElementById("result")!.style.width =
-          this.result.length + "ch";
+        const result = document.getElementById("result");
+        console.log(this.result.length);
+        if (result != null) result.style.width = this.result.length + "ch";
       }
     },
   },

@@ -4,7 +4,8 @@
     <RouterLink to="/calculations">Calculator</RouterLink>
     <RouterLink to="/boolean-operations"> Boolean operations</RouterLink>
     <RouterLink to="/random-generator"> Random generator</RouterLink>
-    <RouterLink to="/converter"> Converter </RouterLink>
+    <RouterLink to="/converter"> Converter</RouterLink>
+    <RouterLink to="/debug" class="debug">Debug</RouterLink>
   </nav>
 </template>
 
@@ -64,6 +65,13 @@ nav a:not(.router-link-active) {
   nav a.router-link-exact-active {
     border-left: 1px solid var(--color-text);
     margin-left: -1px;
+  }
+  
+  .debug {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    color: rgb(166, 116, 0);
   }
 }
 </style>

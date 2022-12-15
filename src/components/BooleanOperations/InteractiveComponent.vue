@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <main>
     <h1>Boolean operations</h1>
@@ -65,7 +63,7 @@ export default {
   methods: {
     async getResult() {
       let er = false;
-      if (this.numberField1 == "") {
+      if (this.numberField1 === "") {
         const field = document.getElementById(
           "numberField1"
         ) as HTMLInputElement;
@@ -73,7 +71,7 @@ export default {
         field?.reportValidity();
         er = true;
       }
-      if (this.numberField2 == "" && this.operator != "P") {
+      if (this.numberField2 === "" && this.operator != "P") {
         const field = document.getElementById(
           "numberField2"
         ) as HTMLInputElement;
@@ -119,19 +117,17 @@ export default {
       }
 
       const numField = document.getElementById(fieldName) as HTMLInputElement;
-      if (this.mode === "0" && !this.isNumber(vmodel) && vmodel != "") {
+      if (this.mode === "0" && !this.testInputFormat(vmodel) && vmodel != "") {
         numField?.setCustomValidity("Invalid field.");
         numField?.reportValidity();
       } else {
         numField?.setCustomValidity("");
       }
     },
-    isNumber(str: string) {
-      for (let i of str) {
-        const tst = isNaN(parseFloat(i));
-        if (tst) return false;
-      }
-      return true;
+    testInputFormat(str: string) {
+      let reg = new RegExp("^[-+]?[\\d]*[,.]?[\\d]+$", "gm");
+      if (this.operator === "P") reg = new RegExp("^[\\d]*$", "gm");
+      return reg.test(str);
     },
   },
 
@@ -146,11 +142,7 @@ export default {
         document.getElementById("numberField2")?.removeAttribute("disabled");
       }
     },
-    flag: function () {
-      console.log(this.flag);
-    },
     mode: function () {
-      console.log(this.mode);
       this.validateField(1);
       this.validateField(2);
 
@@ -158,7 +150,7 @@ export default {
         "non-string-operator"
       );
       for (let i of stringOptions) {
-        if (this.mode == "1") {
+        if (this.mode === "1") {
           i.setAttribute("disabled", "disabled");
           this.operator = "==";
         } else {
@@ -171,6 +163,15 @@ export default {
     },
     numberField2: function () {
       this.validateField(2);
+    },
+    result: function () {
+      const elem = document.getElementById("result");
+      if (this.result === "True") {
+        if (elem != null) elem.style.color = "#15a003";
+      }
+      if (this.result === "False") {
+        if (elem != null) elem.style.color = "rgb(255, 84, 95)";
+      }
     },
   },
 };
@@ -281,7 +282,6 @@ input[type="radio"]:checked::after {
 
 input:invalid {
   border-color: rgb(162, 10, 10) !important;
-  /* color: rgb(218, 103, 10) !important; */
   background-color: #433 !important;
 }
 

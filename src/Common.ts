@@ -29,6 +29,10 @@ export async function makePOSTRequest(data: RequestData) {
     },
     body: JSON.stringify(data),
   };
-  console.log(data.Module + " request sent, awaiting response...");
-  return await fetch("http://localhost:8000", options);
+  console.log(Modules[data.Module] + " request sent, awaiting response...");
+  const start = performance.now();
+  const response = await fetch("http://localhost:8000", options);
+  const end = performance.now();
+  console.log(`response received after ${end - start}ms`);
+  return response;
 }

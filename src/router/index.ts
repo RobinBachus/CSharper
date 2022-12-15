@@ -29,6 +29,11 @@ const router = createRouter({
       name: "converter",
       component: () => import("../views/ConverterView.vue"),
     },
+    {
+      path: "/debug",
+      name: "debug",
+      component: () => import("../views/DebugView.vue"),
+    },
   ],
 });
 

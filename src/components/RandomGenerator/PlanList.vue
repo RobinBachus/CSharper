@@ -3,6 +3,14 @@
   <div id="checklist">
     <p class="checkbox todo"></p>
     <p class="label">Get a given amount of random numbers between two values</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a given amount of random characters</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Randomly rearrange a sentence</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a random color</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Add information about the operators</p>
   </div>
 </template>
 
