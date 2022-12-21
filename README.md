@@ -9,6 +9,7 @@ This is a website to practice c#, html, css and javascript. It should include mo
 To install this project get the source code from Github and run:
 
 ```powershell
+# This does not install devDependencies
 PS CSharper> npm install --omit=dev
 ```
 
@@ -18,6 +19,7 @@ To install the server component use:
 ```powershell
 PS CSharper> git submodule update --init --recursive
 PS CSharper> cd server/
+# The module should already be up to date on newer versions of git, but just to be safe we pull the latest version
 PS CSharper/server> git pull origin master
 ```
 
@@ -35,7 +37,9 @@ And in a separate window run:
 PS CSharper> npm run dotnet
 ```
 
-### Extra info commands
+### Extra info and commands
+
+- If you want the developer dependencies from npm just leave out the `--omit=dev` from the `npm install` command. The difference in size is ~33mb without vs. ~145mb with dev dependencies.
 
 - To host the website on a different port use:
 
