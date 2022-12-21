@@ -9,7 +9,7 @@
     </p>
     <p class="checkbox"></p>
     <p class="label">Not flag [!] to reverse output</p>
-    <p class="checkbox todo"></p>
+    <p class="checkbox"></p>
     <p class="label">Add information about the operators</p>
   </div>
 </template>

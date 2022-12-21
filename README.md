@@ -53,7 +53,7 @@ PS CSharper> npm run dotnet
 - [x] Check if expression is true ([<], [>], [==], [<=], [>=])
 - [x] Not flag [!] to reverse output
 - [x] Check if a number is prime
-- [ ] Add information about the operators
+- [x] Add information about the operators
 
 ### Random generator
 

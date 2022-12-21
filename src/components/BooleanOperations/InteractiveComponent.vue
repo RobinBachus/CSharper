@@ -61,6 +61,12 @@ export default {
     };
   },
   methods: {
+    /**
+     * Checks if all fields are valid and makes a request to the server.
+     * The response is displayed in the #result input field
+     *
+     * @returns false if a field is invalid, otherwise nothing
+     */
     async getResult() {
       let er = false;
       if (this.numberField1 === "") {
@@ -97,6 +103,12 @@ export default {
       const response = await makePOSTRequest(data);
       this.result = await response.text();
     },
+
+    /**
+     * Tests if a field contains a valid input
+     *
+     * @param field The number of the input field
+     */
     validateField(field: number) {
       let vmodel: string;
       let fieldName: string;
@@ -124,13 +136,31 @@ export default {
         numField?.setCustomValidity("");
       }
     },
+    /**
+     * Tests if a string is a decimal number (both positive and negative)
+     *
+     * @param str The string to test
+     *
+     * @example
+     * "+12" --- returns true
+     * "1.2" --- returns true
+     * "-5,6" -- returns true
+     * ".1" ---- returns true
+     *
+     * "1." ---- returns false
+     * "5.5.5" - returns false
+     * "1..5" -- returns false
+     * "a5" ---- returns false
+     */
     testInputFormat(str: string) {
       let reg = new RegExp("^[-+]?[\\d]*[,.]?[\\d]+$", "gm");
+      // Prime numbers can only be positive integers
       if (this.operator === "P") reg = new RegExp("^[\\d]*$", "gm");
       return reg.test(str);
     },
   },
 
+  // If these variables change, the corresponding function is run.
   watch: {
     operator: function () {
       if (this.operator === "P") {
@@ -221,6 +251,7 @@ input[type="text"] {
   content: "";
   display: inline-block;
   visibility: visible;
+  cursor: pointer;
 }
 
 #not-flag:checked::after {
@@ -263,6 +294,7 @@ input[type="radio"]::after {
   content: "";
   display: inline-block;
   visibility: visible;
+  cursor: pointer;
 }
 
 input[type="radio"]:checked::after {
