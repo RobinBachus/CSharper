@@ -6,7 +6,14 @@ This is a website to practice c#, html, css and javascript. It should include mo
 
 ## Installation
 
-To install this project get the source code from Github and run:
+First clone the project:
+
+```powershell
+PS> git clone https://github.com/RobinBachus/CSharper.git
+PS> cd CSharper/
+```
+
+Then, to get all the dependencies, run:
 
 ```powershell
 # This does not install devDependencies
@@ -39,7 +46,7 @@ PS CSharper> npm run dotnet
 
 ### Extra info and commands
 
-- If you want the developer dependencies from npm just leave out the `--omit=dev` from the `npm install` command. The difference in size is ~33mb without vs. ~145mb with dev dependencies.
+- If you want the developer dependencies from npm just leave out the `--omit=dev` from the `npm install` command. The difference in size is ~35mb without vs. ~142mb with dev dependencies.
 
 - To host the website on a different port use:
 
