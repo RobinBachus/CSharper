@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Plans from "../components/RandomGenerator/PlanList.vue";
+import Debug from "../components/Debug/DebugComponent.vue";
 </script>
 
 <template>
   <div class="main-container">
     <div id="plans">
-      <Plans></Plans>
+      <Debug></Debug>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@ import Plans from "../components/RandomGenerator/PlanList.vue";
 <script lang="ts">
 export default {
   components: {
-    Plans,
+    Debug,
   },
 };
 </script>

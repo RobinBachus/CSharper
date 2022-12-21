@@ -1,15 +1,11 @@
 <template>
   <h2>Plans:</h2>
   <div id="checklist">
-    <p class="checkbox"></p>
-    <p class="label">Basic calculus ([+], [-], [*], [/])</p>
-    <p class="checkbox"></p>
-    <p class="label">Math.Pow, Math.sqrt</p>
-    <p class="checkbox"></p>
-    <p class="label">Divisibility checker</p>
-    <p class="checkbox"></p>
-    <p class="label">Return a given length of pi</p>
-    <p class="checkbox"></p>
+    <p class="checkbox todo"></p>
+    <p class="label">Convert euros to dollars and reverse</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Covert chars to Unicode and reverse</p>
+    <p class="checkbox todo"></p>
     <p class="label">Add information about the operators</p>
   </div>
 </template>

@@ -2,13 +2,13 @@
   <h2>Plans:</h2>
   <div id="checklist">
     <p class="checkbox"></p>
-    <p class="label">Basic calculus ([+], [-], [*], [/])</p>
+    <p class="label">Option for string or number (string only [==])</p>
     <p class="checkbox"></p>
-    <p class="label">Math.Pow, Math.sqrt</p>
+    <p class="label">
+      Check if expression is true ([&lt;], [>], [==], [&lt;=], [>=])
+    </p>
     <p class="checkbox"></p>
-    <p class="label">Divisibility checker</p>
-    <p class="checkbox"></p>
-    <p class="label">Return a given length of pi</p>
+    <p class="label">Not flag [!] to reverse output</p>
     <p class="checkbox"></p>
     <p class="label">Add information about the operators</p>
   </div>

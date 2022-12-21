@@ -12,7 +12,7 @@
           id="numberField1"
           v-model="numberField1"
           type="text"
-          pattern="[-+]?[\d]+[,]?[\d]*"
+          pattern="[-+]?[\d]*[,.]?[\d]+"
           maxlength="20"
         />
         <select id="operator" v-model="operator">
@@ -29,13 +29,13 @@
           id="numberField2"
           v-model="numberField2"
           type="text"
-          pattern="[-+]?[\d]+[,]?[\d]*"
+          pattern="[-+]?[\d]*[,.]?[\d]+"
           maxlength="20"
         />
         <button id="submit">=</button>
         <br />
         <p>Result:</p>
-        <input id="result" v-model="result" disabled />
+        <input id="result" v-model="result" type="text" disabled />
         <p></p>
       </form>
     </div>
@@ -75,7 +75,7 @@ export default {
         return false;
       } else if (this.operator === "π") {
         if ((this.numberField1 as unknown as number) > 28) {
-          this.result = "Max digits is 15";
+          this.result = "Max digits is 28";
           return false;
         }
       }
@@ -90,10 +90,9 @@ export default {
 
       const data: RequestData = {
         Module: Modules.Calculations,
-        SubModule: 1,
         Parameters: [this.numberField1, parameter2, this.operator],
       };
-      let response = await makePOSTRequest(data);
+      const response = await makePOSTRequest(data);
       this.result = await response.text();
     },
   },
@@ -102,10 +101,17 @@ export default {
       if (this.operator === "√" || this.operator === "π") {
         this.numberField2 = "";
         document
-          .getElementById("numberField2")!
-          .setAttribute("disabled", "disable");
+          .getElementById("numberField2")
+          ?.setAttribute("disabled", "disable");
       } else {
-        document.getElementById("numberField2")!.removeAttribute("disabled");
+        document.getElementById("numberField2")?.removeAttribute("disabled");
+      }
+    },
+    result: function () {
+      if (this.result.length > 21) {
+        const result = document.getElementById("result");
+        console.log(this.result.length);
+        if (result != null) result.style.width = this.result.length + "ch";
       }
     },
   },
@@ -123,12 +129,19 @@ select,
 }
 
 input[type="text"] {
+  font-family: CascadiaMono, sans-serif;
+  width: 23ch;
+  height: 21px;
   border-color: rgb(0, 119, 80);
 }
 
 #submit {
   border-color: grey;
   cursor: pointer;
+}
+
+#result {
+  border-color: darkblue;
 }
 
 input:invalid {
@@ -138,5 +151,10 @@ input:invalid {
 #numberField2:disabled {
   background-color: rgb(33, 33, 33);
   border-color: #333;
+}
+
+@font-face {
+  font-family: CascadiaMono;
+  src: url(../../assets/fonts/CascadiaMono.woff2);
 }
 </style>

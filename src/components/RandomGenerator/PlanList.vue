@@ -1,15 +1,15 @@
 <template>
   <h2>Plans:</h2>
   <div id="checklist">
-    <p class="checkbox"></p>
-    <p class="label">Basic calculus ([+], [-], [*], [/])</p>
-    <p class="checkbox"></p>
-    <p class="label">Math.Pow, Math.sqrt</p>
-    <p class="checkbox"></p>
-    <p class="label">Divisibility checker</p>
-    <p class="checkbox"></p>
-    <p class="label">Return a given length of pi</p>
-    <p class="checkbox"></p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a given amount of random numbers between two values</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a given amount of random characters</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Randomly rearrange a sentence</p>
+    <p class="checkbox todo"></p>
+    <p class="label">Get a random color</p>
+    <p class="checkbox todo"></p>
     <p class="label">Add information about the operators</p>
   </div>
 </template>
