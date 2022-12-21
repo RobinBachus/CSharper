@@ -56,6 +56,8 @@ PS CSharper> npm run dotnet
 
 - The server can't be run on a different port (yet) because the website code can't be changed when starting the server, and the server port is hardcoded. This may be changed in the future to work with a `.env` file.
 
+- The releases for this project includes a build of the website that can also be run. The reason I didn't use this as the default install is that this is meant as a practice project, so the source code is in some ways more important than the actual website. But the build is there and can be easily downloaded and started.
+
 ## Website content sketch / implementation TODO list
 
 ### Home
