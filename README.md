@@ -46,7 +46,7 @@ PS CSharper> npm run dotnet
 
 ### Extra info and commands
 
-- If you want the developer dependencies from npm just leave out the `--omit=dev` from the `npm install` command. The difference in size is ~35mb without vs. ~142mb with dev dependencies.
+- If you want the developer dependencies from npm just leave out the `--omit=dev` from the `npm install` command. The difference in size is ~38mb without vs. ~142mb with dev dependencies.
 
 - To host the website on a different port use:
 
