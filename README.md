@@ -24,14 +24,26 @@ PS CSharper/server> git pull origin master
 Finally to start the two components, run:
 
 ```powershell
+# Start vite to host the website on http://localhost:5173
 PS CSharper> npm run dev
 ```
 
 And in a separate window run:
 
 ```powershell
+# Start the c# server on http://localhost:8000
 PS CSharper> npm run dotnet
 ```
+
+### Extra info commands
+
+- To host the website on a different port use:
+
+    ```powershell
+    PS CSharper> npm run dev -- --port [PORTNUMBER]
+    ```
+
+- The server can't be run on a different port (yet) because the website code can't be changed when starting the server, and the server port is hardcoded. This may be changed in the future to work with a `.env` file.
 
 ## Website content sketch / implementation TODO list
 
